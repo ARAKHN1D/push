@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/app.drey.Push.desktop.in
+data/app.drey.Push.metainfo.xml.in
+data/app.drey.Push.gschema.xml
+src/gtk/window.ui
+src/main.py
+src/window.py

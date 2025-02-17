@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Push
+Exec=push
+Icon=app.drey.Push
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true
