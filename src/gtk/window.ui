@@ -4,8 +4,8 @@
   <requires lib="Adw" version="1.0"/>
   <template class="PushWindow" parent="AdwApplicationWindow">
     <property name="title" translatable="yes">Push</property>
-    <property name="default-width">800</property>
-    <property name="default-height">600</property>
+    <property name="default-width">360</property>
+    <property name="default-height">360</property>
     <property name="content">
       <object class="AdwToolbarView">
         <child type="top">
@@ -20,6 +20,53 @@
             </child>
           </object>
         </child>
+        <property name="content">
+          <object class="AdwPreferencesPage">
+            <child>
+              <object class="AdwPreferencesGroup">
+                <child>
+                  <object class="AdwSwitchRow" id="body_row">
+                    <property name="title" translatable="yes">Body</property>
+                    <property name="active">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwSpinRow" id="spin_row">
+                    <property name="title" translatable="yes">Buttons</property>
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="lower">0</property>
+                        <property name="upper">3</property>
+                        <property name="value">1</property>
+                        <property name="page-increment">1</property>
+                        <property name="step-increment">1</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwSwitchRow" id="icon_row">
+                    <property name="title" translatable="yes">Icon</property>
+                    <property name="active">True</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwPreferencesGroup">
+                <child>
+                  <object class="AdwButtonRow" id="send_row">
+                    <property name="title" translatable="yes">_Send</property>
+                    <property name="use-underline">True</property>
+                    <style>
+                      <class name="suggested-action"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
       </object>
     </property>
   </template>
