@@ -17,8 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Adw
-from gi.repository import Gtk
+from gi.repository import Gtk, Gio, Adw
 
 @Gtk.Template(resource_path='/app/drey/Push/gtk/window.ui')
 class PushWindow(Adw.ApplicationWindow):
@@ -26,3 +25,8 @@ class PushWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+    @Gtk.Template.Callback()
+    def on_send_row_activated(self, send_row):
+        notification = Gio.Notification.new(_("Notification sent"))
+        self.get_application().send_notification("notification-testing", notification)

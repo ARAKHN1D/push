@@ -58,6 +58,7 @@
                   <object class="AdwButtonRow" id="send_row">
                     <property name="title" translatable="yes">_Send</property>
                     <property name="use-underline">True</property>
+                    <signal name="activated" handler="on_send_row_activated"/>
                     <style>
                       <class name="suggested-action"/>
                     </style>
