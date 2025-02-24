@@ -23,10 +23,17 @@ from gi.repository import Gtk, Gio, Adw
 class PushWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'PushWindow'
 
+    icon_row = Gtk.Template.Child()
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
     @Gtk.Template.Callback()
     def on_send_row_activated(self, send_row):
         notification = Gio.Notification.new(_("Notification sent"))
+        icon = self.icon_row.get_active()
+
+        if icon:
+            notification.set_icon(Gio.Icon.new_for_string("app.drey.Push"))
+
         self.get_application().send_notification("notification-testing", notification)
