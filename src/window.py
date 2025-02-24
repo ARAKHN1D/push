@@ -19,9 +19,9 @@
 
 from gi.repository import Gtk, Gio, Adw
 
-@Gtk.Template(resource_path='/app/drey/Push/gtk/window.ui')
+@Gtk.Template(resource_path="/app/drey/Push/gtk/window.ui")
 class PushWindow(Adw.ApplicationWindow):
-    __gtype_name__ = 'PushWindow'
+    __gtype_name__ = "PushWindow"
 
     icon_row = Gtk.Template.Child()
 

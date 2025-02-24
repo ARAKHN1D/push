@@ -31,7 +31,7 @@
                   </object>
                 </child>
                 <child>
-                  <object class="AdwSpinRow" id="spin_row">
+                  <object class="AdwSpinRow" id="buttons_row">
                     <property name="title" translatable="yes">Buttons</property>
                     <property name="adjustment">
                       <object class="GtkAdjustment">

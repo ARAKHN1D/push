@@ -20,8 +20,8 @@
 import sys
 import gi
 
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
+gi.require_version("Gtk", "4.0")
+gi.require_version("Adw", "1")
 
 from gi.repository import Gtk, Gio, Adw
 from .window import PushWindow
@@ -31,10 +31,10 @@ class PushApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self):
-        super().__init__(application_id='app.drey.Push',
+        super().__init__(application_id="app.drey.Push",
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
-        self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
-        self.create_action('about', self.on_about_action)
+        self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
+        self.create_action("about", self.on_about_action)
 
     def do_activate(self):
         """Called when the application is activated.
@@ -49,14 +49,14 @@ class PushApplication(Adw.Application):
 
     def on_about_action(self, *args):
         """Callback for the app.about action."""
-        about = Adw.AboutDialog(application_name='push',
-                                application_icon='app.drey.Push',
-                                developer_name='ARAKHNID',
-                                version='0.1.0',
-                                developers=['ARAKHNID'],
-                                copyright='© 2025 ARAKHNID')
+        about = Adw.AboutDialog(application_name="Push",
+                                application_icon="app.drey.Push",
+                                developer_name="ARAKHNID",
+                                version="0.1.0",
+                                developers=["ARAKHNID"],
+                                copyright="© 2025 ARAKHNID")
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-        about.set_translator_credits(_('translator-credits'))
+        about.set_translator_credits(_("translator-credits"))
         about.present(self.props.active_window)
 
     def create_action(self, name, callback, shortcuts=None):
