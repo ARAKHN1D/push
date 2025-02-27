@@ -18,11 +18,54 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Gtk, Gio, Adw
+from random import choice
 
 @Gtk.Template(resource_path="/app/drey/Push/gtk/window.ui")
 class PushWindow(Adw.ApplicationWindow):
     __gtype_name__ = "PushWindow"
 
+    # Categories
+    body_no_buttons = (
+        {"title": _("Command Completed"), "body": _("<COMMAND>")},
+        {"title": _("Text Copied"), "body": _('"Lorem ipsum"')},
+        {"title": _("Destination Reached"), "body": _("<DESTINATION>")}
+    )
+    body_one_button = (
+        {"title": _("Email Received"), "body": _('"Lorem ipsum" from <EMAIL>.'),
+                "buttons": (_("Open"))},
+        {"title": _("Updates Downloaded"), "body": _("Updates are ready to be installed."),
+                "buttons": (_("Install"))},
+        {"title": _("Download Finished"), "body": _('"<FILE>" successfully downloaded.'),
+                "buttons": (_("Open"))}
+    )
+    body_two_buttons = (
+        {"title": _("Message Received"), "body": _("Lorem ipsum dolor sit amet"),
+                "buttons": (_("Open"), _("Mark as Read"))},
+        {"title": _("Sharing Requested"), "body": _("Sharing requested from <USER>."),
+                "buttons": (_("Allow"), _("Deny"))},
+        {"title": _("<APP> Crashed"), "body": _("Crash occured in component <COMPONENT>."),
+                "buttons": (_("Relaunch"), _("Show Details"))}
+    )
+    body_three_buttons = ()
+    no_body_no_buttons = (
+        {"title": _("File Operations Completed")},
+        {"title": _("<USER> Logged In")},
+        {"title": _("Updates Installed")}
+    )
+    no_body_one_button = (
+        {"title": _("Updates Installed"), "buttons": (_("Show Details"))},
+        {"title": _("Timer Finished"), "buttons": (_("Restart"))},
+        {"title": _("<APP> Ready"), "buttons": (_("Launch"))}
+    )
+    no_body_two_buttons = (
+        {"title": _("Alarm Went Off"), "buttons": (_("Stop"), _("Snooze"))},
+        {"title": _("<USER> is Calling"), "buttons": (_("Join"), _("Ignore"))},
+        {"title": _("Screensharing Requested"), "buttons": (_("Allow"), _("Deny"))}
+    )
+    no_body_three_buttons = ()
+
+    body_row = Gtk.Template.Child()
+    buttons_row = Gtk.Template.Child()
     icon_row = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -30,10 +73,35 @@ class PushWindow(Adw.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_send_row_activated(self, send_row):
-        notification = Gio.Notification.new(_("Notification sent"))
-        icon = self.icon_row.get_active()
+        notification = Gio.Notification.new(_(""))
+        has_body = self.body_row.get_active()
+        buttons_amount = self.buttons_row.get_value()
+        has_icon = self.icon_row.get_active()
 
-        if icon:
+        match (has_body, buttons_amount):
+            case (True, 0):
+                preset = choice(self.body_no_buttons)
+            case (True, 1):
+                preset = choice(self.body_one_button)
+            case (True, 2):
+                preset = choice(self.body_two_buttons)
+            case (True, 3):
+                preset = choice(self.body_two_buttons)
+            case (False, 0):
+                preset = choice(self.no_body_no_buttons)
+            case (False, 1):
+                preset = choice(self.no_body_one_button)
+            case (False, 2):
+                preset = choice(self.no_body_two_buttons)
+            case (False, 3):
+                preset = choice(self.no_body_two_buttons)
+
+        if preset["body"]:
+            notification.set_body(preset["body"])
+        if preset["buttons"]:
+            for button in preset["buttons"]:
+                notification.add_button(button, "app.button-clicked")
+        if has_icon:
             notification.set_icon(Gio.Icon.new_for_string("app.drey.Push"))
 
         self.get_application().send_notification("notification-testing", notification)
