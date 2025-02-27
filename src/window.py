@@ -96,6 +96,7 @@ class PushWindow(Adw.ApplicationWindow):
             case (False, 3):
                 preset = choice(self.no_body_two_buttons)
 
+        notification.set_title(preset["title"])
         if preset["body"]:
             notification.set_body(preset["body"])
         if preset["buttons"]:
