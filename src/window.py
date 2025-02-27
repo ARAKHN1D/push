@@ -32,19 +32,19 @@ class PushWindow(Adw.ApplicationWindow):
     )
     body_one_button = (
         {"title": _("Email Received"), "body": _('"Lorem ipsum" from <EMAIL>.'),
-                "buttons": (_("Open"))},
+                "buttons": [_("Open")]},
         {"title": _("Updates Downloaded"), "body": _("Updates are ready to be installed."),
-                "buttons": (_("Install"))},
+                "buttons": [_("Install")]},
         {"title": _("Download Finished"), "body": _('"<FILE>" successfully downloaded.'),
-                "buttons": (_("Open"))}
+                "buttons": [_("Open")]}
     )
     body_two_buttons = (
         {"title": _("Message Received"), "body": _("Lorem ipsum dolor sit amet"),
-                "buttons": (_("Open"), _("Mark as Read"))},
+                "buttons": [_("Open"), _("Mark as Read")]},
         {"title": _("Sharing Requested"), "body": _("Sharing requested from <USER>."),
-                "buttons": (_("Allow"), _("Deny"))},
+                "buttons": [_("Allow"), _("Deny")]},
         {"title": _("<APP> Crashed"), "body": _("Crash occured in component <COMPONENT>."),
-                "buttons": (_("Relaunch"), _("Show Details"))}
+                "buttons": [_("Relaunch"), _("Show Details")]}
     )
     body_three_buttons = ()
     no_body_no_buttons = (
@@ -53,14 +53,14 @@ class PushWindow(Adw.ApplicationWindow):
         {"title": _("Updates Installed")}
     )
     no_body_one_button = (
-        {"title": _("Updates Installed"), "buttons": (_("Show Details"))},
-        {"title": _("Timer Finished"), "buttons": (_("Restart"))},
-        {"title": _("<APP> Ready"), "buttons": (_("Launch"))}
+        {"title": _("Updates Installed"), "buttons": [_("Show Details")]},
+        {"title": _("Timer Finished"), "buttons": [_("Restart")]},
+        {"title": _("<APP> Ready"), "buttons": [_("Launch")]}
     )
     no_body_two_buttons = (
-        {"title": _("Alarm Went Off"), "buttons": (_("Stop"), _("Snooze"))},
-        {"title": _("<USER> is Calling"), "buttons": (_("Join"), _("Ignore"))},
-        {"title": _("Screensharing Requested"), "buttons": (_("Allow"), _("Deny"))}
+        {"title": _("Alarm Went Off"), "buttons": [_("Stop"), _("Snooze")]},
+        {"title": _("<USER> is Calling"), "buttons": [_("Join"), _("Ignore")]},
+        {"title": _("Screensharing Requested"), "buttons": [_("Allow"), _("Deny")]}
     )
     no_body_three_buttons = ()
 
