@@ -46,7 +46,14 @@ class PushWindow(Adw.ApplicationWindow):
         {"title": _("<APP> Crashed"), "body": _("Crash occured in component <COMPONENT>."),
                 "buttons": [_("Relaunch"), _("Show Details")]}
     )
-    body_three_buttons = ()
+    body_three_buttons = (
+        {"title": _("Project Invitation"), "body": _("<USER> invited you to project <PROJECT>"),
+                "buttons": [_("Accept"), _("Decline"), _("Show Details")]},
+        {"title": _("Extension Updates Available"), "body": _("Logout to apply extension updates."),
+                "buttons": [_("Logout"), _("Remind Later"), _("Show Details")]}
+        {"title": _("Battery Low"), "body": _("Switching the Power Mode to Power Saver may decrease battery usage."),
+                "buttons": [_("Switch"), _("Dismiss"), _("Show Details")]}
+    )
     no_body_no_buttons = (
         {"title": _("File Operations Completed")},
         {"title": _("<USER> Logged In")},
@@ -62,7 +69,14 @@ class PushWindow(Adw.ApplicationWindow):
         {"title": _("<USER> is Calling"), "buttons": [_("Join"), _("Ignore")]},
         {"title": _("Screensharing Requested"), "buttons": [_("Allow"), _("Deny")]}
     )
-    no_body_three_buttons = ()
+    no_body_three_buttons = (
+        {"title": _("Software Updates Available"),
+                "buttons": [_("Install"), _("Remind Later"), _("Show Details")]},
+        {"title": _("<USER> Requested Remote Access"),
+                "buttons": [_("Allow"), _("Deny"), _("Show Details")]},
+        {"title": _("Meeting Invitation"),
+                "buttons": [_("Accept"), _("Decline"), _("Show Details")]}
+    )
 
     body_row = Gtk.Template.Child()
     buttons_row = Gtk.Template.Child()
@@ -86,7 +100,7 @@ class PushWindow(Adw.ApplicationWindow):
             case (True, 2):
                 preset = choice(self.body_two_buttons)
             case (True, 3):
-                preset = choice(self.body_two_buttons)
+                preset = choice(self.body_three_buttons)
             case (False, 0):
                 preset = choice(self.no_body_no_buttons)
             case (False, 1):
@@ -94,7 +108,7 @@ class PushWindow(Adw.ApplicationWindow):
             case (False, 2):
                 preset = choice(self.no_body_two_buttons)
             case (False, 3):
-                preset = choice(self.no_body_two_buttons)
+                preset = choice(self.no_body_three_buttons)
 
         notification.set_title(preset["title"])
         if "body" in preset:
