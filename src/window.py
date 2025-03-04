@@ -97,9 +97,9 @@ class PushWindow(Adw.ApplicationWindow):
                 preset = choice(self.no_body_two_buttons)
 
         notification.set_title(preset["title"])
-        if preset["body"]:
+        if "body" in preset:
             notification.set_body(preset["body"])
-        if preset["buttons"]:
+        if "buttons" in preset:
             for button in preset["buttons"]:
                 notification.add_button(button, "app.button-clicked")
         if has_icon:
