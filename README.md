@@ -1,3 +1,5 @@
-# push
+# Push
 
-A description of this project.
+Send notifications for testing
+
+Currently under construction :)
