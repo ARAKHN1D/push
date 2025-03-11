@@ -50,7 +50,7 @@ class PushWindow(Adw.ApplicationWindow):
         {"title": _("Project Invitation"), "body": _("<USER> invited you to project <PROJECT>"),
                 "buttons": [_("Accept"), _("Decline"), _("Show Details")]},
         {"title": _("Extension Updates Available"), "body": _("Logout to apply extension updates."),
-                "buttons": [_("Logout"), _("Remind Later"), _("Show Details")]}
+                "buttons": [_("Logout"), _("Remind Later"), _("Show Details")]},
         {"title": _("Battery Low"), "body": _("Switching the Power Mode to Power Saver may decrease battery usage."),
                 "buttons": [_("Switch"), _("Dismiss"), _("Show Details")]}
     )
