@@ -6,12 +6,9 @@
 
   <name>Push</name>
   <summary>Send notifications for testing</summary>
-  <description>
-    <p>No description</p>
-  </description>
 
   <developer id="tld.vendor">
-    <name>ARAKHNID</name>
+    <name translatable="no">ARAKHNID</name>
   </developer>
 
   <url type="homepage">https://github.com/ARAKHN1D/push</url>
