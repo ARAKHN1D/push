@@ -37,6 +37,10 @@
   </branding>
 
   <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/ARAKHN1D/push/main/data/screenshots/screenshot.png</image>
+      <caption>Push</caption>
+    </screenshot>
   </screenshots>
 
   <releases>
