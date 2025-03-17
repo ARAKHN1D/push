@@ -7,7 +7,7 @@
   <name>Push</name>
   <summary>Send notifications for testing</summary>
 
-  <developer id="tld.vendor">
+  <developer id="io.github.arakhn1d">
     <name translatable="no">ARAKHNID</name>
   </developer>
 
