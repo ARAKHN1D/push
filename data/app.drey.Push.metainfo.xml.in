@@ -6,6 +6,9 @@
 
   <name>Push</name>
   <summary>Send notifications for testing</summary>
+  <description>
+    <p>Push let's you send notifications for testing purposes.</p>
+  </description>
 
   <developer id="io.github.arakhn1d">
     <name translatable="no">ARAKHNID</name>
