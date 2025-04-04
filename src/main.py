@@ -54,6 +54,7 @@ class PushApplication(Adw.Application):
                                 developer_name="ARAKHNID",
                                 version="0.1.0",
                                 developers=["ARAKHNID"],
+                                artists=["Jakub Steiner"],
                                 copyright="© 2025 ARAKHNID")
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_("translator-credits"))
