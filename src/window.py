@@ -24,7 +24,11 @@ from random import choice
 class PushWindow(Adw.ApplicationWindow):
     __gtype_name__ = "PushWindow"
 
-    # Categories
+    # Translators: All this text will be displayed in notifications. The pattern
+    # "<CONTENT>" is used to show when content would normally be shown in other apps.
+    # For example, a body containing "<MESSAGE>" would display a message the user
+    # received. These notifications will not be populated with actual content, so
+    # this pattern can be translated.
     body_no_buttons = (
         {"title": _("Command Completed"), "body": _("<COMMAND>")},
         {"title": _("Text Copied"), "body": _('"<TEXT>"')},
