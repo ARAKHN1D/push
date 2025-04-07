@@ -1,7 +1,13 @@
-# Push
+<div align="center">
+  <img src="data/icons/hicolor/scalable/apps/app.drey.Push.svg">
+  
+  # Push
 
-Send notifications for testing
+  Send notifications for testing
+  
+  <img src="data/screenshots/screenshot.png">
+</div>
 
-![push](data/screenshots/screenshot.png)
+## Contributing
 
-Currently under construction :)
+This project follows the [GNOME Code of Conduct](https://conduct.gnome.org/).
