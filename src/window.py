@@ -27,11 +27,11 @@ class PushWindow(Adw.ApplicationWindow):
     # Categories
     body_no_buttons = (
         {"title": _("Command Completed"), "body": _("<COMMAND>")},
-        {"title": _("Text Copied"), "body": _('"Lorem ipsum"')},
+        {"title": _("Text Copied"), "body": _('"<TEXT>"')},
         {"title": _("Destination Reached"), "body": _("<DESTINATION>")}
     )
     body_one_button = (
-        {"title": _("Email Received"), "body": _('"Lorem ipsum" from <EMAIL>.'),
+        {"title": _("Email Received"), "body": _('"<SUBJECT>" from <EMAIL>.'),
                 "buttons": [_("Open")]},
         {"title": _("Updates Downloaded"), "body": _("Updates are ready to be installed."),
                 "buttons": [_("Install")]},
@@ -39,7 +39,7 @@ class PushWindow(Adw.ApplicationWindow):
                 "buttons": [_("Open")]}
     )
     body_two_buttons = (
-        {"title": _("Message Received"), "body": _("Lorem ipsum dolor sit amet"),
+        {"title": _("Message Received"), "body": _("<MESSAGE>"),
                 "buttons": [_("Open"), _("Mark as Read")]},
         {"title": _("Sharing Requested"), "body": _("Sharing requested from <USER>."),
                 "buttons": [_("Allow"), _("Deny")]},
