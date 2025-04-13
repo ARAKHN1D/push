@@ -30,7 +30,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/ARAKHN1D/push"
+                    "url" : "https://github.com/ARAKHN1D/push",
+                    "branch" : "main"
                 }
             ]
         }
