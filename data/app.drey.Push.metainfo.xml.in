@@ -39,11 +39,6 @@
     <control>touch</control>
   </supports>
 
-  <branding>
-    <color type="primary" scheme_preference="light">#ff00ff</color>
-    <color type="primary" scheme_preference="dark">#993d3d</color>
-  </branding>
-
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/ARAKHN1D/push/main/data/screenshots/screenshot.png</image>
@@ -52,6 +47,11 @@
   </screenshots>
 
   <releases>
+    <release version="0.1.0" date="2025-04-14">
+      <description translate="no">
+        <p>Initial release</p>
+      </description>
+    </release>
   </releases>
 
 </component>
