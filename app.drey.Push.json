@@ -31,7 +31,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ARAKHN1D/push",
-                    "branch" : "main"
+                    "tag" : "0.1.0"
                 }
             ]
         }
